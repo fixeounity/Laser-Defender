@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4877375636425854}
   - component: {fileID: 212027601344809756}
+  - component: {fileID: 114140605290994642}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -40,6 +41,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &114140605290994642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585497539271998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74bd65a55d42a164ebed337dc5f4e840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 4362638648028088, guid: 32dee59996017e74eae4d2307ba8ba68, type: 2}
+  - {fileID: 4127539908285512, guid: 32dee59996017e74eae4d2307ba8ba68, type: 2}
+  - {fileID: 4744258967484276, guid: 32dee59996017e74eae4d2307ba8ba68, type: 2}
 --- !u!212 &212027601344809756
 SpriteRenderer:
   m_ObjectHideFlags: 1
