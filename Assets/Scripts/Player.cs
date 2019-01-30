@@ -2,26 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     // Config parameters
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float padding = 0.5f;
     [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] float projectileFiringPeriod = 0.15f;
+
+    Coroutine firingCoroutine;
 
     float xMin;
     float xMax;
     float yMin;
     float yMax;
 
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         SetupMoveBoundaries();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         Move();
         Fire();
     }
@@ -40,7 +47,7 @@ public class Player : MonoBehaviour {
     {
         Camera gameCamera = Camera.main;
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x -padding;
+        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
     }
@@ -49,14 +56,28 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            firingCoroutine = StartCoroutine(FireContinuously());
+        }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(firingCoroutine);
+        }
+    }
+
+    private IEnumerator FireContinuously()
+    {
+        while (true)
+        {
             GameObject laser = Instantiate(
-                laserPrefab, 
-                transform.position, 
+                laserPrefab,
+                transform.position,
                 Quaternion.identity
                 ) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
             Destroy(laser, 2f);
+            yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
+
 
 }
