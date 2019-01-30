@@ -74,7 +74,6 @@ public class Player : MonoBehaviour
                 Quaternion.identity
                 ) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-            Destroy(laser, 2f);
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }

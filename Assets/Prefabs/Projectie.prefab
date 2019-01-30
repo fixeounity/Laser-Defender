@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4412235480287436}
   - component: {fileID: 212042141142058304}
   - component: {fileID: 50081893075256858}
+  - component: {fileID: 70517181479622178}
   m_Layer: 0
   m_Name: Projectie
   m_TagString: Untagged
@@ -61,6 +62,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &70517181479622178
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039587525747796}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.1015625, y: 0.2890625}
+  m_Direction: 0
 --- !u!212 &212042141142058304
 SpriteRenderer:
   m_ObjectHideFlags: 1
