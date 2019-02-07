@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour {
             GameObject newEnemy = Instantiate(
                         waveConfig.GetEnemyPrefab(),
                         waveConfig.GetWaypoints()[0].position,
-                        Quaternion.identity
+                        waveConfig.GetEnemyPrefab().transform.rotation
                         );
             newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
