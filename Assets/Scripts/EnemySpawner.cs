@@ -10,10 +10,17 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        var currentWave = waveConfigs[startingWave];
-        Debug.Log(currentWave.GetPathPrefab().name);
-        StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+        StartCoroutine(SpawnAllWaves());
 	}
+
+    private IEnumerator SpawnAllWaves()
+    {
+        for(int waveIndex = startingWave; waveIndex < waveConfigs.Count; waveIndex++)
+        {
+            var currentWave = waveConfigs[waveIndex];
+            yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+        }
+    }
 
     private IEnumerator SpawnAllEnemiesInWave(WaveConfig waveConfig)
     {
