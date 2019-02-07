@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4877375636425854}
   - component: {fileID: 212027601344809756}
   - component: {fileID: 114140605290994642}
+  - component: {fileID: 114639300198135602}
+  - component: {fileID: 58067705018767100}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -35,12 +37,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585497539271998}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 1.65, z: 0}
+  m_LocalPosition: {x: 0.041834652, y: -1.2147114, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!58 &58067705018767100
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585497539271998}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.12
 --- !u!114 &114140605290994642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,6 +69,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bd65a55d42a164ebed337dc5f4e840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114639300198135602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585497539271998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6d78b191288ab4a9f4c1912048de67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!212 &212027601344809756
 SpriteRenderer:
   m_ObjectHideFlags: 1
