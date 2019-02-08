@@ -103,6 +103,8 @@ public class Player : MonoBehaviour
             deathSFXVolume
         );
         Destroy(gameObject);
+
+        FindObjectOfType<Level>().LoadGameOver();
     }
 
     private void ProcessHit(DamageDealer damageDealer)
