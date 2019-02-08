@@ -83,9 +83,13 @@ MonoBehaviour:
   health: 100
   deathVFX: {fileID: 1341548902429216, guid: 43a5c04852b1ef5418f80de528b0d39b, type: 2}
   explosionDuration: 0.25
+  deathSFX: {fileID: 8300000, guid: 7e6e141930a0fbc4b8039e74c50eb9be, type: 3}
+  deathSFXVolume: 0.3
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
+  shotSFX: {fileID: 8300000, guid: bcffb1ba7dbb4aa4bb830ea1be5710a1, type: 3}
+  shotSFXVolume: 0.2
   projectilePrefab: {fileID: 1039587525747796, guid: 0379ddb1bed49424085d75dd223d24d9,
     type: 2}
   projectileSpeed: 5
