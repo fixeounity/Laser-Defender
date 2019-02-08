@@ -86,7 +86,7 @@ MonoBehaviour:
   maxTimeBetweenShots: 3
   projectilePrefab: {fileID: 1039587525747796, guid: 0cce4497d1cc3674aa4d3f650a5dd0a5,
     type: 2}
-  projectileSpeed: 7
+  projectileSpeed: 2
 --- !u!212 &212027601344809756
 SpriteRenderer:
   m_ObjectHideFlags: 1
