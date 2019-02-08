@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50081893075256858}
   - component: {fileID: 61864545097429150}
   - component: {fileID: 114485986477017532}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Projectie 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
