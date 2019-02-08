@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    [Header("Enemy")]
     [SerializeField] float health = 100;
+
+    [Header("Death")]
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float explosionDuration = 0.25f;
+
+    [Header("Attack")]
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
+
+    [Header("Projectile")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float projectileSpeed = 5f;
 
@@ -44,12 +52,18 @@ public class Enemy : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            DestroyEnemy();
+            Die();
         }
     }
 
-    private void DestroyEnemy()
+    private void Die()
     {
+        var explosion = Instantiate(
+            deathVFX,
+            transform.position,
+            Quaternion.identity
+            );
+        Destroy(explosion, explosionDuration);
         Destroy(gameObject);
     }
 

@@ -81,12 +81,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  deathVFX: {fileID: 1341548902429216, guid: 43a5c04852b1ef5418f80de528b0d39b, type: 2}
+  explosionDuration: 0.25
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
   projectilePrefab: {fileID: 1039587525747796, guid: 0379ddb1bed49424085d75dd223d24d9,
     type: 2}
-  projectileSpeed: 2
+  projectileSpeed: 5
 --- !u!212 &212027601344809756
 SpriteRenderer:
   m_ObjectHideFlags: 1
