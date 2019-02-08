@@ -6,9 +6,13 @@ public class Player : MonoBehaviour
 {
 
     // Config parameters
-    [SerializeField] GameObject laserPrefab;
+    [Header("Player")]
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float padding = 0.5f;
+    [SerializeField] float health = 200f;
+
+    [Header("Projectile")]
+    [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.15f;
 
@@ -78,5 +82,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void ProcessHit(DamageDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var damageDealer = other.GetComponent<DamageDealer>();
+
+        ProcessHit(damageDealer);
+    }
 
 }
