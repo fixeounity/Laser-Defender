@@ -2,28 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicPlayer : MonoBehaviour {
+public class MusicPlayer : Singleton {
 
-	// Use this for initialization
-	void Awake () {
-        SetupSingleton();
-	}
+	
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    private void SetupSingleton()
-    {
-        if(FindObjectsOfType(GetType()).Length > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+    
 
 }

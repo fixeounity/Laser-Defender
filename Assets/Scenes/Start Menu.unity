@@ -113,6 +113,20 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &49108716
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4180234391830396, guid: 44c9774dee66f5a4ebeb9eae50351ffa, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44c9774dee66f5a4ebeb9eae50351ffa, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &141274221
 Prefab:
   m_ObjectHideFlags: 0
@@ -298,12 +312,12 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 867245087}
+      objectReference: {fileID: 867037093}
     - target: {fileID: 114895234483177798, guid: cffbc9c3e5a13824b8fa2fc65dfda58f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 867245087}
+      objectReference: {fileID: 867037093}
     - target: {fileID: 114255016528426076, guid: cffbc9c3e5a13824b8fa2fc65dfda58f,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -333,15 +347,25 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114612615505641534, guid: cffbc9c3e5a13824b8fa2fc65dfda58f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadGameScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895234483177798, guid: cffbc9c3e5a13824b8fa2fc65dfda58f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cffbc9c3e5a13824b8fa2fc65dfda58f, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &867245087 stripped
+--- !u!114 &867037093 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114297831929539018, guid: 8c64d7fee76d0f44cb31cd3759b96a57,
+  m_CorrespondingSourceObject: {fileID: 114342654288782250, guid: 44c9774dee66f5a4ebeb9eae50351ffa,
     type: 2}
-  m_PrefabInternal: {fileID: 1804351291}
+  m_PrefabInternal: {fileID: 49108716}
   m_Script: {fileID: 11500000, guid: 6c2980376eafdd14c9150e70b51e18d6, type: 3}
 --- !u!1001 &1639055113
 Prefab:

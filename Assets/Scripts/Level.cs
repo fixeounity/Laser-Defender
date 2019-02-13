@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level : MonoBehaviour {
+public class Level : MonoBehaviour
+{
 
     [SerializeField] float gameOverDelayDuration = 1f;
 
-	public void LoadGameOver()
+    public void LoadGameOver()
     {
         StartCoroutine(LoadGameOverWithDelay());
     }
@@ -20,6 +21,8 @@ public class Level : MonoBehaviour {
 
     public void LoadGameScene()
     {
+        FindObjectOfType<GameSession>().ResetGame();
+
         SceneManager.LoadScene(1);
     }
 

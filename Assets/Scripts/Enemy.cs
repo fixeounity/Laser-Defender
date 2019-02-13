@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Enemy")]
     [SerializeField] float health = 100;
+    [SerializeField] int scoreValue = 10;
 
     [Header("Death")]
     [SerializeField] GameObject deathVFX;
@@ -61,7 +62,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Die()
+    private void PlayExplosionVFX()
     {
         var explosion = Instantiate(
             deathVFX,
@@ -69,12 +70,34 @@ public class Enemy : MonoBehaviour
             Quaternion.identity
             );
         Destroy(explosion, explosionDuration);
+    }
 
+    private void PlayDeathSFX()
+    {
         AudioSource.PlayClipAtPoint(
-            deathSFX,
-            Camera.main.transform.position,
-            deathSFXVolume
-            );
+        deathSFX,
+        Camera.main.transform.position,
+        deathSFXVolume
+        );
+    }
+
+    private void PlayDeathEffects()
+    {
+        PlayExplosionVFX();
+
+        PlayDeathSFX();
+    }
+
+    private void AddScore()
+    {
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
+    }
+
+    private void Die()
+    {
+        PlayDeathEffects();
+
+        AddScore();
 
         Destroy(gameObject);
     }
